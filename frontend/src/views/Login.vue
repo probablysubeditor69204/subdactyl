@@ -9,7 +9,7 @@ const error = ref('')
 
 const login = async () => {
   try {
-    const response = await fetch('http://localhost:8000/api/login', {
+    const response = await fetch('/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email.value, password: password.value })

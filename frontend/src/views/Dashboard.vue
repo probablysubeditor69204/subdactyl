@@ -7,7 +7,7 @@ const loading = ref(true)
 const fetchServers = async () => {
   try {
     const token = localStorage.getItem('token')
-    const res = await fetch('http://localhost:8000/api/servers', {
+    const res = await fetch('/api/servers', {
       headers: { 'Authorization': `Bearer ${token}` }
     })
     if (res.ok) {

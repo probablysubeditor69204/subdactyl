@@ -9,7 +9,7 @@ const syncResources = async () => {
   message.value = ''
   try {
     const token = localStorage.getItem('token')
-    const res = await fetch('http://localhost:8000/api/admin/sync', {
+    const res = await fetch('/api/admin/sync', {
       method: 'POST',
       headers: { 'Authorization': `Bearer ${token}` }
     })

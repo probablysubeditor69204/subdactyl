@@ -15,7 +15,7 @@ const createServer = async () => {
   
   try {
     const token = localStorage.getItem('token')
-    const res = await fetch('http://localhost:8000/api/servers', {
+    const res = await fetch('/api/servers', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',

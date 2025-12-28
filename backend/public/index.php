@@ -1,5 +1,16 @@
 <?php
 
+// DEBUG: Dump server variables to verify Nginx config
+header('Content-Type: application/json');
+echo json_encode([
+    'debug' => true,
+    'REQUEST_URI' => $_SERVER['REQUEST_URI'] ?? null,
+    'SCRIPT_NAME' => $_SERVER['SCRIPT_NAME'] ?? null,
+    'PATH_INFO' => $_SERVER['PATH_INFO'] ?? null,
+    'QUERY_STRING' => $_SERVER['QUERY_STRING'] ?? null,
+]);
+die();
+
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));

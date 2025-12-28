@@ -31,13 +31,3 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/settings', [AdminController::class, 'updateSettings']);
     });
 });
-
-// Debug catch-all
-Route::any('/{any}', function (Request $request) {
-    return response()->json([
-        'message' => 'Route not found (Debug)',
-        'path' => $request->path(),
-        'url' => $request->url(),
-        'method' => $request->method()
-    ], 404);
-})->where('any', '.*');

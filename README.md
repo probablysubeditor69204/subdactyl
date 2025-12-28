@@ -30,8 +30,9 @@ The recommended way to install Subdactyl is using Docker Compose.
 
 2. **Start the application:**
    ```bash
-   docker-compose up -d --build
+   docker compose up -d --build
    ```
+   *(Note: If you have an older version of Docker, use `docker-compose up -d --build`)*
 
 3. **Access the Dashboard:**
    - Open `http://localhost` (or your server's IP) in your browser.

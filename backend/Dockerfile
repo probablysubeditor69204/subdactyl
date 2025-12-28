@@ -29,6 +29,14 @@ COPY . .
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 
+# Create system directories
+RUN mkdir -p \
+    /var/www/html/backend/storage/framework/cache \
+    /var/www/html/backend/storage/framework/sessions \
+    /var/www/html/backend/storage/framework/views \
+    /var/www/html/backend/storage/logs \
+    /var/www/html/backend/bootstrap/cache
+
 # Fix permissions
 RUN chown -R www-data:www-data /var/www/html/backend/storage /var/www/html/backend/bootstrap/cache
 

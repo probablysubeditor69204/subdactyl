@@ -24,7 +24,8 @@ services:
       dockerfile: Dockerfile
     container_name: subdactyl-frontend
     volumes:
-      - frontend_assets:/app/dist
+      - frontend_assets:/export
+    command: /bin/sh -c "rm -rf /export/* && cp -rf /app/dist/* /export/ && echo 'Assets deployed!' && while :; do sleep 2073600; done"
     networks:
       - subdactyl-network
 
